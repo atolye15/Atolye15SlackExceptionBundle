@@ -36,5 +36,5 @@ Full config for SlackExceptioBundle is below:
         channel: general # Channel to publish
         username: APPException # Owner of message
         project: MyAwesomeProject # Identifier for your project
-        throw_exception: true # Throw an error if Slack request fails.
+        throw_exception: false # Throw an error if Slack request fails. Default false
         request_timeout: 3000 # Timeout for Slack request. Set 0 for disable timeout. Default 3000
