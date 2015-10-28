@@ -14,16 +14,17 @@ Then run composer update command.
     php composer.phar update
 
 Finally enable bundle in your kernel
+
     <?php
     // app/AppKernel.php
 
     public function registerBundles()
     {
-    $bundles = array(
-        // ...
-        new Atolye15\SlackExceptionBundle\Atolye15SlackExceptionBundle(),
-    );
-}
+        $bundles = array(
+            // ...
+            new Atolye15\SlackExceptionBundle\Atolye15SlackExceptionBundle(),
+        );
+    }
 
 ## Configuration
 Before you start to configuration, you must create a new web api token in your Slack dashboard. You can create token from https://api.slack.com/web url.
