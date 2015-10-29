@@ -19,7 +19,7 @@ class PostService
   public function __construct(ContainerInterface $container, TokenStorage $tokenStorage)
   {
     $this->container = $container;
-    $this->user = $tokenStorage->getToken()->getUser();
+    $this->user = $tokenStorage->getToken() !== null ? $tokenStorage->getToken()->getUser() : null;
   }
 
   private function getParameter($parameter)
