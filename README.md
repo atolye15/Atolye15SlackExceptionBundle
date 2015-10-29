@@ -13,7 +13,7 @@ Then run composer update command.
 
     php composer.phar update
 
-Finally enable bundle in your kernel
+Finally enable bundle in your kernel.
 
     <?php
     // app/AppKernel.php
@@ -27,9 +27,9 @@ Finally enable bundle in your kernel
     }
 
 ## Configuration
-Before you start to configuration, you must create a new web api token in your Slack dashboard. You can create token from https://api.slack.com/web url.
+Before you start configuration, you must create a new web api token in your Slack dashboard. You can create token from https://api.slack.com/web
 
-Full config for SlackExceptioBundle is below:
+Full config for SlackExceptionBundle is below:
 
     atolye15_slack_exception:
         environment: prod # all or prod, default prod
