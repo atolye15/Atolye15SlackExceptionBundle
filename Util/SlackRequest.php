@@ -28,12 +28,11 @@ class SlackRequest
       if ($timeout > 0) {
         curl_setopt($curl, CURLOPT_TIMEOUT, 3000);
       }
-      
+
       $response = json_decode(curl_exec($curl), true);
       curl_close($curl);
+      return $response;
     } catch (\Exception $e) {
-      // We let the application runs.
-    } finally {
       return $response;
     }
   }
