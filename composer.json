@@ -2,7 +2,7 @@
     "name": "atolye15/slack-exception-bundle",
     "type": "symfony-bundle",
     "description": "Push all exceptions to specified Slack channels automatically.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "slack",
         "exception"

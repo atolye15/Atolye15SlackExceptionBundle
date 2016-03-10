@@ -4,6 +4,7 @@ namespace Atolye15\SlackExceptionBundle\EventListener;
 
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ExceptionListener
 {
@@ -16,6 +17,12 @@ class ExceptionListener
 
   public function onKernelException(GetResponseForExceptionEvent $event)
   {
+    $exception = $event->getException();
+
+    if ($exception instanceof NotFoundHttpException) {
+      return false;
+    }
+
     // Get slack post service
     $postService = $this
       ->container
@@ -23,6 +30,6 @@ class ExceptionListener
     ;
 
     // Send exception to Slack
-    $postService->send($event->getException(), $event->getRequest());
+    $postService->send($exception, $event->getRequest());
   }
 }
