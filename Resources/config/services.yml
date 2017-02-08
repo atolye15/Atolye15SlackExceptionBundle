@@ -4,14 +4,14 @@ parameters:
 
 services:
   atolye15_slack_exception.listener:
-    class: %atolye15_slack_exception.listener_class%
+    class: "%atolye15_slack_exception.listener_class%"
     arguments:
       container: "@service_container"
     tags:
       - { name: kernel.event_listener, event: kernel.exception }
 
   atolye15_slack_exception.post_service:
-    class: %atolye15_slack_exception.post_service_class%
+    class: "%atolye15_slack_exception.post_service_class%"
     arguments:
       container: "@service_container"
       tokenStorage: "@security.token_storage"
